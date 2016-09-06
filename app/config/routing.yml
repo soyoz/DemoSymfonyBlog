@@ -1,3 +1,15 @@
+soyoz_blog:
+    resource: "@SoyozBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+blog:
+    path:      /blog
+    defaults:  { _controller: SoyozBlogBundle:Blog:index }
+
+blog_show:
+    path:      /blog/{slug}
+    defaults:  { _controller: SoyozBlogBundle:Blog:show }

@@ -1,0 +1,19 @@
+Soyoz\BlogBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: Soyoz\BlogBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '20'
+            unique: true
+        password:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

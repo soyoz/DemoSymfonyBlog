@@ -1,0 +1,33 @@
+Soyoz\BlogBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: Soyoz\BlogBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        slug:
+            type: string
+            length: 255
+        description:
+            type: text
+            nullable: true
+        created_at:
+            type: datetime
+            nullable: false
+        created_by:
+            type: integer
+            nullable: false
+        updated_at:
+            type: datetime
+            nullable: true
+        updated_by:
+            type: integer
+            nullable: true
+    lifecycleCallbacks: {  }

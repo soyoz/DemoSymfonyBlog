@@ -1,0 +1,7 @@
+soyoz_blog_homepage:
+    path:     /
+    defaults: { _controller: SoyozBlogBundle:Default:index }
+
+list:
+    path:     /list
+    defaults: { _controller: SoyozBlogBundle:Blog:list }

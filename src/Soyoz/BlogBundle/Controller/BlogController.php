@@ -14,6 +14,9 @@ class BlogController extends Controller
         $posts = $this->getDoctrine()
         ->getRepository('SoyozBlogBundle:Post')
         ->findAll();
+        /**
+        die(dump($posts));
+        **/
 
         return $this->render('SoyozBlogBundle:Blog:index.html.twig', array(
             'posts' => $posts
@@ -24,7 +27,10 @@ class BlogController extends Controller
     {
         $post = $this->getDoctrine()
         ->getRepository('SoyozBlogBundle:Post')
-        ->findBySlug($slug);
+        ->findOneBySlug($slug);
+        /**
+        die(dump($post));
+        **/
 
         return $this->render('SoyozBlogBundle:Blog:show.html.twig', array(
             'post' => $post

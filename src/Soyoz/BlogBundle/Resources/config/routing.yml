@@ -5,7 +5,11 @@ soyoz_blog_homepage:
 soyoz_blog_admin:
     path:       /admin
     defaults:   { _controller: SoyozBlogBundle:Admin:index }
-    
+
+soyoz_blog_admin_post:
+    resource: "@SoyozBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /admin/post
+
 soyoz_blog_list:
     path:       /list
     defaults:   { _controller: SoyozBlogBundle:Blog:list }

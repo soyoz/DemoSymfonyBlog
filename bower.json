@@ -1,0 +1,21 @@
+{
+  "name": "symfony-blog",
+  "homepage": "https://github.com/soyoz/DemoSymfonyBlog",
+  "authors": [
+    "Erol Soyöz <erol@soyoz.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

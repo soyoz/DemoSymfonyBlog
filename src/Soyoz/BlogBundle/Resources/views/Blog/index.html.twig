@@ -16,10 +16,6 @@
 
                 <hr>
 
-                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.createdAt|date("Y-m-d") }}</p>
-
-                <hr>
-
                 <p>{{ post.description }}</p>
 
                 <a class="btn btn-primary" href="{{ path('soyoz_blog_show', { slug: post.slug }) }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>

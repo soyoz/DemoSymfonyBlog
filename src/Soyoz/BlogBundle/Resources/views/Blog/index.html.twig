@@ -1,7 +1,39 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}SoyozBlogBundle:Blog:index{% endblock %}
+{% block title %}DemoSymfonyBlog{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Blog:index page</h1>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-12">
+            {% for post in posts %}
+                <h1><a href="{{ path('soyoz_blog_show', { slug: post.slug }) }}">{{ post.title }}</a></h1>
+
+                <p class="lead">
+                    by {{ post.createdUser.username }}
+                </p>
+
+                <hr>
+
+                <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.createdAt|date("Y-m-d") }}</p>
+
+                <hr>
+
+                <p>{{ post.description }}</p>
+
+                <a class="btn btn-primary" href="{{ path('soyoz_blog_show', { slug: post.slug }) }}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <hr>
+            {% endfor %}
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
 {% endblock %}

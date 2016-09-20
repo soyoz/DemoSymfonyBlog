@@ -1,7 +1,40 @@
 {% extends "::base.html.twig" %}
 
-{% block title %}SoyozBlogBundle:Blog:show{% endblock %}
+{% block title %}DemoSymfonyBlog - {{ post.title }}{% endblock %}
 
 {% block body %}
-<h1>Welcome to the Blog:show page</h1>
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <!-- Blog Post Content Column -->
+        <div class="col-lg-12">
+
+            <!-- Blog Post -->
+
+            <!-- Title -->
+            <h1>{{ post.title }}</h1>
+
+            <!-- Author -->
+            <p class="lead">
+                by {{ post.createdUser.username }}
+            </p>
+
+            <hr>
+
+            <!-- Date/Time -->
+            <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.createdAt|date("Y-m-d") }}</p>
+
+            <hr>
+
+            <!-- Post Content -->
+            <p>{{ post.description }}</p>
+
+            <hr>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
 {% endblock %}

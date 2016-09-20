@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                 dest: 'web/assets/dist/js/scripts.js'
             },
             styles: {
-                src: ['web/assets/css/bootstrap.css'],
+                src: ['web/assets/css/bootstrap.css', 'web/assets/css/blog.css'],
                 dest: 'web/assets/dist/css/styles.css'
             },
         },

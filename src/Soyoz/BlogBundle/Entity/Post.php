@@ -2,7 +2,7 @@
 /**
  * @author Erol Soyöz <erol@soyoz.com>
  */
- 
+
 namespace Soyoz\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -32,6 +32,30 @@ class Post
      */
     private $description;
 
+    /**
+     * @var \DateTime
+     */
+    private $created_at;
+
+    /**
+     * @var integer
+     */
+    private $created_by;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated_at;
+
+    /**
+     * @var integer
+     */
+    private $updated_by;
+
+    /**
+     * @var Object
+     */
+    private $created_user;
 
     /**
      * Get id
@@ -111,15 +135,6 @@ class Post
     {
         return $this->description;
     }
-    /**
-     * @var \DateTime
-     */
-    private $created_at;
-
-    /**
-     * @var integer
-     */
-    private $created_by;
 
 
     /**
@@ -167,15 +182,6 @@ class Post
     {
         return $this->created_by;
     }
-    /**
-     * @var \DateTime
-     */
-    private $updated_at;
-
-    /**
-     * @var integer
-     */
-    private $updated_by;
 
 
     /**
@@ -222,5 +228,29 @@ class Post
     public function getUpdatedBy()
     {
         return $this->updated_by;
+    }
+
+    /**
+     * Set createdUser
+     *
+     * @param \Soyoz\BlogBundle\Entity\User $createdUser
+     *
+     * @return Post
+     */
+    public function setCreatedUser(\Soyoz\BlogBundle\Entity\User $createdUser = null)
+    {
+        $this->created_user = $createdUser;
+
+        return $this;
+    }
+
+    /**
+     * Get createdUser
+     *
+     * @return \Soyoz\BlogBundle\Entity\User
+     */
+    public function getCreatedUser()
+    {
+        return $this->created_user;
     }
 }

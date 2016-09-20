@@ -7,6 +7,7 @@
         {% block stylesheets %}
             {% if app.environment == 'dev' %}
                 <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
+                <link rel="stylesheet" href="{{ asset('assets/css/blog.css') }}">
             {% else %}
                 <link rel="stylesheet" href="{{ asset('assets/dist/css/styles.min.css') }}">
             {% endif %}
@@ -15,7 +16,20 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('soyoz_blog_homepage') }}">DemoSymfonyBlog</a>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
         {% block body %}{% endblock %}
+
         {% block javascripts %}
             {% if app.environment == 'dev' %}
                 <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>

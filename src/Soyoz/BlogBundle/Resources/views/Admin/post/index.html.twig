@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container">
     <h1>Post list</h1>
 
     <table>
@@ -10,10 +11,6 @@
                 <th>Title</th>
                 <th>Slug</th>
                 <th>Description</th>
-                <th>Created_at</th>
-                <th>Created_by</th>
-                <th>Updated_at</th>
-                <th>Updated_by</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,10 +21,6 @@
                 <td>{{ post.title }}</td>
                 <td>{{ post.slug }}</td>
                 <td>{{ post.description }}</td>
-                <td>{% if post.createdat %}{{ post.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ post.createdby }}</td>
-                <td>{% if post.updatedat %}{{ post.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ post.updatedby }}</td>
                 <td>
                     <ul>
                         <li>
@@ -48,4 +41,5 @@
             <a href="{{ path('admin_post_new') }}">Create a new entry</a>
         </li>
     </ul>
+</div>
 {% endblock %}

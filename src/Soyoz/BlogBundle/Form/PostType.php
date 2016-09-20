@@ -18,13 +18,9 @@ class PostType extends AbstractType
             ->add('title')
             ->add('slug')
             ->add('description')
-            ->add('created_at', 'datetime')
-            ->add('created_by')
-            ->add('updated_at', 'datetime')
-            ->add('updated_by')
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */

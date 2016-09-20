@@ -1,11 +1,5 @@
 Soyoz\BlogBundle\Entity\Post:
     type: entity
-    oneToOne:
-        created_user:
-            targetEntity: User
-            joinColumn:
-                name: created_by
-                referencedColumnName: id
     table: null
     repositoryClass: Soyoz\BlogBundle\Repository\PostRepository
     id:
@@ -21,22 +15,8 @@ Soyoz\BlogBundle\Entity\Post:
         slug:
             type: string
             length: 255
+            unique: true
         description:
             type: text
             nullable: true
-        created_at:
-            type: datetime
-            nullable: false
-        created_by:
-            type: integer
-            nullable: false
-        updated_at:
-            type: datetime
-            nullable: true
-        updated_by:
-            type: integer
-            nullable: true
-    indexes:
-        ix_slug:
-          columns: [ slug ]
     lifecycleCallbacks: {  }

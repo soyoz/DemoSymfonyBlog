@@ -21,7 +21,39 @@
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+
+                        {% if app.user %}
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        {% else %}
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        {% endif %}
+                    </button>
                     <a class="navbar-brand" href="{{ path('soyoz_blog_homepage') }}">DemoSymfonyBlog</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav pull-right">
+                        {% if app.user %}
+                            <li>
+                                <a href="{{ path('soyoz_blog_admin') }}">Admin</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li>
+                                <a href="{{ path('fos_user_security_login') }}">Login</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_registration_register') }}">Register</a>
+                            </li>
+                        {% endif %}
+                    </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>

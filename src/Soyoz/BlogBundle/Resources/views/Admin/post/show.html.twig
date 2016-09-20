@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container">
     <h1>Post</h1>
 
     <table>
@@ -21,22 +22,6 @@
                 <th>Description</th>
                 <td>{{ post.description }}</td>
             </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{% if post.createdat %}{{ post.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Created_by</th>
-                <td>{{ post.createdby }}</td>
-            </tr>
-            <tr>
-                <th>Updated_at</th>
-                <td>{% if post.updatedat %}{{ post.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Updated_by</th>
-                <td>{{ post.updatedby }}</td>
-            </tr>
         </tbody>
     </table>
 
@@ -53,4 +38,5 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+</div>
 {% endblock %}

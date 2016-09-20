@@ -14,10 +14,6 @@
             {% for post in posts %}
                 <h1><a href="{{ path('soyoz_blog_show', { slug: post.slug }) }}">{{ post.title }}</a></h1>
 
-                <p class="lead">
-                    by {{ post.createdUser.username }}
-                </p>
-
                 <hr>
 
                 <p><span class="glyphicon glyphicon-time"></span> Posted on {{ post.createdAt|date("Y-m-d") }}</p>
